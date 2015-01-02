@@ -1,0 +1,21 @@
+pg:
+  image: postgres:latest
+  ports:
+    - 5432
+  environment:
+    - POSTGRES_PASSWORD
+    - POSTGRES_USER
+
+app:
+  build: fugacious-app
+  ports:
+    - 80:80
+  links:
+    - pg
+  environment:
+    - FUGACIOUS_USERNAME
+    - FUGACIOUS_DATABASE
+    - FUGACIOUS_DATABASE_PASSWORD
+    - FUGACIOUS_SECRET_KEY_BASE
+    - FUGACIOUS_DB_KEY_BASE
+    - RAILS_ENV
