@@ -42,4 +42,4 @@ ADD webapp.conf /etc/nginx/sites-enabled/webapp.conf
 # Fix the ENV.
 ADD rails-env.conf /etc/nginx/main.d/rails-env.conf
 
-EXPOSE 80
+EXPOSE 80 8080

@@ -9,7 +9,7 @@ pg:
 app:
   build: fugacious-app
   ports:
-    - 80:80
+    - "8080:8080"
   links:
     - pg
   environment:
@@ -19,3 +19,26 @@ app:
     - FUGACIOUS_SECRET_KEY_BASE
     - FUGACIOUS_DB_KEY_BASE
     - RAILS_ENV
+
+googleauth:
+  build: googleauth
+  links:
+    - app:app
+  ports:
+    - "4180:4180"
+  command: '--cookie-https-only=false --upstream=http://app:8080 --google-apps-domain=gsa.gov --pass-basic-auth=true --redirect-url=http://fugacious.18f.us/oauth2/callback --http-address=0.0.0.0:4180'
+  environment:
+    - GOOGLE_AUTH_PROXY_COOKIE_SECRET
+    - GOOGLE_AUTH_PROXY_CLIENT_ID
+    - GOOGLE_AUTH_PROXY_CLIENT_SECRET
+
+proxy:
+  image: dockerfile/nginx
+  ports:
+    - "80:80"
+  links:
+    - googleauth:googleauth
+  volumes:
+    - ./configs/nginx/nginx.conf:/etc/nginx.conf
+    - ./configs/nginx/sites-enabled:/etc/nginx/sites-enabled
+
