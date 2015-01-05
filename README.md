@@ -19,38 +19,36 @@ These instructions assume a Debian-based Linux system such 18F's [FISMA Ready Ub
 
 1. Install Docker.
 
-	curl -sSL https://get.docker.com/ubuntu/ | sudo sh
+		curl -sSL https://get.docker.com/ubuntu/ | sudo sh
 
 2. Install Fig.
 
-	curl -L https://github.com/docker/fig/releases/download/1.0.1/fig-`uname -s`-`uname -m` > /usr/local/bin/fig; chmod +x /usr/local/bin/fig
+		curl -L https://github.com/docker/fig/releases/download/1.0.1/fig-`uname -s`-`uname -m` > /usr/local/bin/fig; chmod +x /usr/local/bin/fig
 
 3. Clone the repository.
 
-	git clone git@github.com:18F/docker-fugacious.git
+		git clone git@github.com:18F/docker-fugacious.git
 
-	cd docker-fugacious
+		cd docker-fugacious
 
 4. Set each of the necessary environment variables described in ```env.sh```, most notably the ```GOOGLE_AUTH_PROXY_CLIENT_ID``` and ```GOOGLE_AUTH_PROXY_CLIENT_SECRET``` which must be set to the ```Client ID``` and ```Client Secret``` recorded above. Complete the environment setup by running the resulting populated script.
 
-	sh env.sh
+		sh env.sh
 
 5. Build the containers. The containers would be build automatically on first run, but getting this out of the way now keeps things nice and neat.
 
-	sudo fig build
+		sudo fig build
 
 6. Prepare the database for first use and start the containers.
 
-	sh start.sh
-
-7. Stop the
+		sh start.sh
 
 Roadmap
 ---
 
 - SSL configuration of frontend NGINX.
 - Add Ansible / Chef deployment scripts with handling of ENV setup via Vault / Citadel.
-- Add [FISMA Ready NGINX] configuration to each instance of NGINX in the stack.
+- Add [FISMA Ready NGINX](https://github.com/fisma-ready/nginx) configuration to each instance of NGINX in the stack.
 - Replace public images with private builds on Quay.
 
 Contributing
