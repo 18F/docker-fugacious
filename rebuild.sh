@@ -3,3 +3,4 @@ set -e
 sudo fig kill
 sudo fig rm --force
 sudo fig build
+sudo fig pull
