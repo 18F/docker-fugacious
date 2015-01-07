@@ -1,6 +1,6 @@
 Fugacious with Google Oauth Proxy via NGINX
 =========
-Easily stand up Fugacious, a solution for secure, short-terms messageing behind NGINX and [Bitly's Google Outh Proxy](https://github.com/bitly/google_auth_proxy).
+Easily stand up Fugacious, a solution for secure, short-term messaging behind nginx and [Bitly's Google Outh Proxy](https://github.com/bitly/google_auth_proxy).
 
 Dependencies
 ---
@@ -15,7 +15,7 @@ Dependencies
 Usage
 ---
 
-These instructions assume a Debian-based Linux system such 18F's [FISMA Ready Ubuntu LTS](https://github.com/fisma-ready/ubuntu-lts). However, other distributions likely work with few if any modifications.
+These instructions assume a Debian-based Linux system such 18F's [FISMA Ready Ubuntu LTS](https://github.com/fisma-ready/ubuntu-lts). However, other distributions will likely work with few if any modifications.
 
 1. Install Docker.
 
@@ -35,7 +35,7 @@ These instructions assume a Debian-based Linux system such 18F's [FISMA Ready Ub
 
 		sh env.sh
 
-5. Build the containers. The containers would be build automatically on first run, but getting this out of the way now keeps things nice and neat.
+5. Build the containers. The containers would be built automatically on first run, but getting this out of the way now keeps things nice and neat.
 
 		sudo fig build
 
@@ -46,9 +46,9 @@ These instructions assume a Debian-based Linux system such 18F's [FISMA Ready Ub
 Roadmap
 ---
 
-- SSL configuration of frontend NGINX.
+- SSL configuration of frontend nginx.
 - Add Ansible / Chef deployment scripts with handling of ENV setup via Vault / Citadel.
-- Add [FISMA Ready NGINX](https://github.com/fisma-ready/nginx) configuration to each instance of NGINX in the stack.
+- Add [FISMA Ready nginx](https://github.com/fisma-ready/nginx) configuration to each instance of nginx in the stack.
 - Replace public images with private builds on Quay.
 
 Contributing
