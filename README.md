@@ -1,6 +1,6 @@
-Fugacious with Google Oauth Proxy via NGINX
+Fugacious with Google OAuth Proxy via NGINX
 =========
-Easily stand up Fugacious, a solution for secure, short-term messaging behind nginx and [Bitly's Google Outh Proxy](https://github.com/bitly/google_auth_proxy).
+Easily stand up Fugacious, a solution for secure, short-term messaging behind nginx and [Bitly's Google OAuth Proxy](https://github.com/bitly/google_auth_proxy).
 
 Dependencies
 ---
