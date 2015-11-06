@@ -19,7 +19,7 @@ These instructions assume a Debian-based Linux system such 18F's [FISMA Ready Ub
 
 1. Install Docker.
 
-		curl -sSL https://get.docker.com/ubuntu/ | sudo sh
+		curl -sSL https://get.docker.com/ | sudo sh
 
 2. Install Fig.
 
